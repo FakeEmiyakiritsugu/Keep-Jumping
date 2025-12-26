@@ -11,7 +11,7 @@ namespace Invector.vCharacterController
         public string verticallInput = "Vertical";
         public KeyCode jumpInput = KeyCode.Space;
         public KeyCode strafeInput = KeyCode.Tab;
-        public KeyCode sprintInput = KeyCode.LeftShift;
+        public KeyCode sprintInput = KeyCode.RightShift;//修改为右shift
 
         [Header("Camera Input")]
         public string rotateCameraXInput = "Mouse X";
@@ -119,6 +119,8 @@ namespace Invector.vCharacterController
                 cc.Strafe();
         }
 
+
+        //冲刺修改
         protected virtual void SprintInput()
         {
             if (Input.GetKeyDown(sprintInput))
@@ -131,6 +133,7 @@ namespace Invector.vCharacterController
         /// Conditions to trigger the Jump animation & behavior
         /// </summary>
         /// <returns></returns>
+        /// 
         protected virtual bool JumpConditions()
         {
             return cc.isGrounded && cc.GroundAngle() < cc.slopeLimit && !cc.isJumping && !cc.stopMove;

@@ -108,8 +108,10 @@ namespace Invector.vCharacterController
         public void Init()
         {
             animator = GetComponent<Animator>();
-            animator.updateMode = AnimatorUpdateMode.AnimatePhysics;
+            animator.updateMode = AnimatorUpdateMode.AnimatePhysics;//设定动画更新模式
 
+
+            //设定三个摩擦力材质
             // slides the character through walls and edges
             frictionPhysics = new PhysicMaterial();
             frictionPhysics.name = "frictionPhysics";
