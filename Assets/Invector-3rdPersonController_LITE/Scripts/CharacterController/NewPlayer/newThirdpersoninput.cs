@@ -39,6 +39,7 @@ public class newThirdpersoninput : vThirdPersonInput
         CameraInput();
         SprintInput();
         StrafeInput();
+        DashInput();
         JumpInput();
     }
 
@@ -61,6 +62,8 @@ public class newThirdpersoninput : vThirdPersonInput
         }
         return jumpflag;
     }
+
+
     //≥Â¥Ã ‰»ÎºÏ≤‚
     protected virtual void DashInput()
     {

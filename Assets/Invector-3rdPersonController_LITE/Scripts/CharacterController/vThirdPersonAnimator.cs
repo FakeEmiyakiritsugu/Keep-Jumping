@@ -13,7 +13,7 @@ namespace Invector.vCharacterController
 
         #endregion  
 
-        public virtual void UpdateAnimator()
+        public virtual void UpdateAnimator()//
         {
             if (animator == null || !animator.enabled) return;
 
@@ -35,6 +35,8 @@ namespace Invector.vCharacterController
             animator.SetFloat(vAnimatorParameters.InputMagnitude, stopMove ? 0f : inputMagnitude, isStrafing ? strafeSpeed.animationSmooth : freeSpeed.animationSmooth, Time.deltaTime);
         }
 
+
+        //inputMagnitude只受到moveDirection影响，而moveDirection范围是-根号2~根号2，这里会影响动画判断，但目前还没有改的必要
         public virtual void SetAnimatorMoveSpeed(vMovementSpeed speed)
         {
             Vector3 relativeInput = transform.InverseTransformDirection(moveDirection);

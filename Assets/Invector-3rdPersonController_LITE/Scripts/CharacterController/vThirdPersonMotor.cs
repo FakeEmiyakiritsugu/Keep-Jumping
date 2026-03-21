@@ -149,7 +149,7 @@ namespace Invector.vCharacterController
 
         public virtual void UpdateMotor()
         {
-            CheckGround();
+            CheckGround();//包含地面移动速度的改变
             CheckSlopeLimit();
             ControlJumpBehaviour();
             AirControl();
@@ -157,7 +157,7 @@ namespace Invector.vCharacterController
 
         #region Locomotion
 
-        public virtual void SetControllerMoveSpeed(vMovementSpeed speed)
+        public virtual void SetControllerMoveSpeed(vMovementSpeed speed)//绝对速度随时间增长，增长速度只和movementsmooth相关
         {
             if (speed.walkByDefault)
                 moveSpeed = Mathf.Lerp(moveSpeed, isSprinting ? speed.runningSpeed : speed.walkSpeed, speed.movementSmooth * Time.deltaTime);

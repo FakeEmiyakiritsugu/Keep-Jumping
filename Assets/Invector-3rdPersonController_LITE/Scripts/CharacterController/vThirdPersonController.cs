@@ -57,7 +57,7 @@ namespace Invector.vCharacterController
         public virtual void UpdateMoveDirection(Transform referenceTransform = null)
         {
             if (input.magnitude <= 0.01)
-            {
+            {//没有输入时速度方向的向量随时间递减，变化速度为movementsmooth
                 moveDirection = Vector3.Lerp(moveDirection, Vector3.zero, (isStrafing ? strafeSpeed.movementSmooth : freeSpeed.movementSmooth) * Time.deltaTime);
                 return;
             }
