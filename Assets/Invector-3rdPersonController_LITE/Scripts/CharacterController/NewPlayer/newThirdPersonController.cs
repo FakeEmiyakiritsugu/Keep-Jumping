@@ -4,7 +4,7 @@ using UnityEngine;
 using Invector;
 using Invector.vCharacterController;
 
-public class newThirdPersonConller : vThirdPersonController
+public class newThirdPersonController : vThirdPersonController
 {
 
 

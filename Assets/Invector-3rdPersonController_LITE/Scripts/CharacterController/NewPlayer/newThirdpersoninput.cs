@@ -8,12 +8,12 @@ public class newThirdpersoninput : vThirdPersonInput
 {
     #region
     [Header("new Controller Input")]
-    //[Tooltip("Lerp speed between Camera States")]
+    [Tooltip("³å·æ°´¼ü")]
     public KeyCode dashinput = KeyCode.LeftShift;//³å·æ°´¼ü
 
 
 
-    [HideInInspector] public newThirdPersonConller dd;
+    [HideInInspector] public newThirdPersonController dd;
     #endregion
 
 
@@ -23,7 +23,7 @@ public class newThirdpersoninput : vThirdPersonInput
     //ÖØÐ´ccµÄ³õÊ¼»¯Âß¼­
     protected override void InitilizeController()
     {
-        dd = GetComponent<newThirdPersonConller>();
+        dd = GetComponent<newThirdPersonController>();
         cc = dd;
 
         if (dd != null)
