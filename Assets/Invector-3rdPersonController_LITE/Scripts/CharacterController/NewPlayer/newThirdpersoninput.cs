@@ -51,10 +51,10 @@ public class newThirdpersoninput : vThirdPersonInput
         {
             jumpflag = true;
         }
-        else if (!dd.isGrounded && dd.currentairjumptimes < dd.maxairjumptimes)//ÔÊÐí¿ÕÖÐÌõÔ¼
+        else if (!dd.isGrounded && dd.get_currentairjumptimes() < dd.maxairjumptimes)//ÔÊÐí¿ÕÖÐÌøÔ¾
         {
             jumpflag = true;
-            dd.currentairjumptimes++;
+            dd.add_currentairjumptimes(1);
         }
         else
         {
@@ -63,11 +63,21 @@ public class newThirdpersoninput : vThirdPersonInput
         return jumpflag;
     }
 
+    protected bool DashConditions()
+    {
+        bool dashflag = false;
+
+        return dashflag;
+    }
+
 
     //³å´ÌÊäÈë¼ì²â
     protected virtual void DashInput()
     {
-
+        if (Input.GetKeyDown(dashinput) && JumpConditions())
+        {
+            cc.Jump();
+        }
     }
 
 
