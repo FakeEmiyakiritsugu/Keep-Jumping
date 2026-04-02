@@ -51,7 +51,7 @@ public class newThirdpersoninput : vThirdPersonInput
         {
             jumpflag = true;
         }
-        else if (!dd.isGrounded && dd.get_currentairjumptimes() < dd.maxairjumptimes)//允许空中跳跃
+        else if (!dd.isGrounded && dd.get_currentairjumptimes() < dd.maxairjumptimes && SegmentBar.Instance.ConsumeStamina(1))//允许空中跳跃,消耗一格耐力
         {
             jumpflag = true;
             dd.add_currentairjumptimes(1);
