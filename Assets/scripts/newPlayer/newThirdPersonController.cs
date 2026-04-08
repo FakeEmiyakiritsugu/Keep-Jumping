@@ -33,7 +33,9 @@ public class newThirdPersonController : vThirdPersonController
 
 
     #endregion
-
+    #region
+    public bool _isDashing = false;//是否正在冲刺
+    #endregion
     #region
     //脚本内部状态变量
     private int currentstamina = 1;//当前耐力条
@@ -41,7 +43,7 @@ public class newThirdPersonController : vThirdPersonController
     private int currentairjumptimes = 0;//当前跳跃次数
 
     //冲刺相关
-
+    
     #endregion
     public int get_currentairjumptimes()
     {
@@ -96,5 +98,12 @@ public class newThirdPersonController : vThirdPersonController
         {
             currentairjumptimes = 0;
         }
+    }
+    /// <summary>
+    /// 发起冲刺
+    /// </summary>
+    public virtual void Dash()
+    {
+
     }
 }

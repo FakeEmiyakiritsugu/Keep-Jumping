@@ -63,10 +63,17 @@ public class newThirdpersoninput : vThirdPersonInput
         return jumpflag;
     }
 
+    /// <summary>
+    /// 冲刺条件
+    /// </summary>
+    /// <returns></returns>
     protected bool DashConditions()
     {
         bool dashflag = false;
-
+        if(dd._isDashing&&SegmentBar.Instance.ConsumeStamina(1))//有耐力，不在冲刺
+        {
+            dashflag = true;
+        }
         return dashflag;
     }
 
@@ -74,9 +81,9 @@ public class newThirdpersoninput : vThirdPersonInput
     //冲刺输入检测
     protected virtual void DashInput()
     {
-        if (Input.GetKeyDown(dashinput) && JumpConditions())
+        if (Input.GetKeyDown(dashinput) && DashConditions())
         {
-            cc.Jump();
+            dd.Dash();
         }
     }
 
