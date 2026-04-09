@@ -70,7 +70,7 @@ public class newThirdpersoninput : vThirdPersonInput
     protected bool DashConditions()
     {
         bool dashflag = false;
-        if(dd._isDashing&&SegmentBar.Instance.ConsumeStamina(1))//有耐力，不在冲刺
+        if(!dd.isDashing&&SegmentBar.Instance.ConsumeStamina(1))//有耐力，不在冲刺
         {
             dashflag = true;
         }
@@ -81,7 +81,7 @@ public class newThirdpersoninput : vThirdPersonInput
     //冲刺输入检测
     protected virtual void DashInput()
     {
-        if (Input.GetKeyDown(dashinput) && DashConditions())
+        if (Input.GetKeyDown(dashinput) && dd.input.magnitude > 0.1f && DashConditions())//冲刺同时按下方向键
         {
             dd.Dash();
         }
