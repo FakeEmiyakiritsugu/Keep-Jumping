@@ -11,7 +11,7 @@ public class SegmentBar : MonoBehaviour
     public Sprite defaultSprite; // 解决无法渐变的核心：必须有一个白色图片素材
 
     [Header("最大耐力格数（改这里自动变格子）")]
-    public int maxStaminaSegments = 2;
+    public int maxStaminaSegments = 1;
 
     //[Header("当前剩余耐力")]
     //public int currentStamina;

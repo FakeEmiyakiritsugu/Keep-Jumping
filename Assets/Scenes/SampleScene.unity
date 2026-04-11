@@ -211,6 +211,10 @@ PrefabInstance:
       value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 2700874171910072507, guid: 330efb0e9eed825408809c121441b8a5, type: 3}
+      propertyPath: smoothFollow
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2700874171910072507, guid: 330efb0e9eed825408809c121441b8a5, type: 3}
       propertyPath: defaultDistance
       value: 2.5
       objectReference: {fileID: 0}
@@ -265,15 +269,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4425428723088313501, guid: fc9b148a2950aaf4cba8422632222c5d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 470.993
+      value: 499.5627
       objectReference: {fileID: 0}
     - target: {fileID: 4425428723088313501, guid: fc9b148a2950aaf4cba8422632222c5d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.0000113248825
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 4425428723088313501, guid: fc9b148a2950aaf4cba8422632222c5d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 65.577
+      value: 510.9695
       objectReference: {fileID: 0}
     - target: {fileID: 4425428723088313501, guid: fc9b148a2950aaf4cba8422632222c5d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -399,7 +403,7 @@ MonoBehaviour:
   jumpWithRigidbodyForce: 0
   jumpAndRotate: 1
   jumpTimer: 0.3
-  jumpHeight: 4
+  jumpHeight: 6
   airSpeed: 5
   airSmooth: 6
   extraGravity: -10
@@ -411,13 +415,16 @@ MonoBehaviour:
   groundMaxDistance: 0.5
   slopeLimit: 75
   maxstamina: 1
-  maxairjumptimes: 1
+  maxairjumptimes: 0
   DashDuration: 0.2
   dashSpeed: 20
   dashCooldown: 1
   dashForwardWhenNoInput: 1
   disableGravityWhenDash: 0
-  _isDashing: 0
+  MaxDashTimes: 0
+  isDashing: 0
+  lastDashTime: -100
+  CurrentDashTimes: 0
 --- !u!114 &523083857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -634,7 +641,7 @@ Transform:
   m_GameObject: {fileID: 840364475}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 472.29358, y: 3.94, z: 44.73}
+  m_LocalPosition: {x: 500.86328, y: 5.85, z: 490.12253}
   m_LocalScale: {x: 2, y: 1, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -935,7 +942,7 @@ Transform:
   m_GameObject: {fileID: 1320714147}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 471.16125, y: 1, z: 54.75}
+  m_LocalPosition: {x: 496.23096, y: 1.98, z: 502.78}
   m_LocalScale: {x: 2, y: 1, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1217,7 +1224,7 @@ Transform:
   m_GameObject: {fileID: 1579987025}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 471.63, y: 2.14, z: 49.7}
+  m_LocalPosition: {x: 500.1997, y: 3.5, z: 495.09253}
   m_LocalScale: {x: 2, y: 1, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1351,7 +1358,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultSprite: {fileID: 21300000, guid: f981fdad814cbfb43969712c51317bae, type: 3}
-  maxStaminaSegments: 3
+  maxStaminaSegments: 1
   segmentWidth: 14
   segmentHeight: 25
   fullColor: {r: 0.7264151, g: 0.71800464, b: 0.6339, a: 1}

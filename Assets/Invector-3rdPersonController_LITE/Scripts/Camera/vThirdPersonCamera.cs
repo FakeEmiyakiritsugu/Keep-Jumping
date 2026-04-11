@@ -84,7 +84,15 @@ public class vThirdPersonCamera : MonoBehaviour
         currentHeight = height;
     }
 
-    void FixedUpdate()
+    //void FixedUpdate()
+    //{
+    //    if (target == null || targetLookAt == null) return;
+
+    //    CameraMovement();
+    //}
+
+    //逆天，原本作者错误的把这段代码放在fixedupdate导致冲刺运动时产生了一帧的问题
+    private void LateUpdate()
     {
         if (target == null || targetLookAt == null) return;
 

@@ -14,7 +14,7 @@ public class newThirdPersonController : vThirdPersonController
     [Tooltip("最大耐力")]
     public int maxstamina = 1;
     [Tooltip("max air jump times")]
-    public int maxairjumptimes = 1;//最大空中跳跃次数
+    public int maxairjumptimes = 0;//最大空中跳跃次数
     //[Tooltip("是否允许在空中冲刺（适配你的二段跳）")]
     //public bool allowAirSprint = false;
 
@@ -30,6 +30,10 @@ public class newThirdPersonController : vThirdPersonController
     public bool dashForwardWhenNoInput = false;
     [Tooltip("空中冲刺时是否禁用重力（避免冲刺时下落）")]
     public bool disableGravityWhenDash = false;
+
+    [Tooltip("最大冲刺数")]
+    public int MaxDashTimes = 0;
+
 
 
 
@@ -47,6 +51,7 @@ public class newThirdPersonController : vThirdPersonController
 
     //冲刺相关
     public float lastDashTime = -100f; // 上次冲刺时间
+    public int CurrentDashTimes = 0;//当前连续冲刺次数
     #endregion
 
     // 核心重写：为了在冲刺时拦截 Invector 的默认移动逻辑
@@ -67,7 +72,14 @@ public class newThirdPersonController : vThirdPersonController
             // 但因为 CheckGround 依然在运行，额外的重力会被正确施加
         }
     }
-
+    public int GetMaxDashTimes()
+    {
+        return MaxDashTimes;
+    }
+    public int GetCurrentDashTimes()
+    {
+        return CurrentDashTimes;
+    }
     public int get_currentairjumptimes()
     {
         return currentairjumptimes;
