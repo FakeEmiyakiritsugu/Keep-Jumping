@@ -225,5 +225,14 @@ public class newThirdPersonController : vThirdPersonController
         lockRotation = false;
         isDashing = false;
     }
+    /// <summary>
+    /// 重新修改去掉没输入就强行阻止人物移动的设定
+    /// </summary>
+    public override void ControlAnimatorRootMotion()
+    {
+        //Debug.Log("ControlAnimatorRootMotion");
+        if (useRootMotion)
+            MoveCharacter(moveDirection);
+    }
 }
 
