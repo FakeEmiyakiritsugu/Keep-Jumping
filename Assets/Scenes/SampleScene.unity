@@ -748,15 +748,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4425428723088313501, guid: fc9b148a2950aaf4cba8422632222c5d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 473.26
+      value: 473.61
       objectReference: {fileID: 0}
     - target: {fileID: 4425428723088313501, guid: fc9b148a2950aaf4cba8422632222c5d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 37.38
+      value: 37.307
       objectReference: {fileID: 0}
     - target: {fileID: 4425428723088313501, guid: fc9b148a2950aaf4cba8422632222c5d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 467.19
+      value: 466.58
       objectReference: {fileID: 0}
     - target: {fileID: 4425428723088313501, guid: fc9b148a2950aaf4cba8422632222c5d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1645,9 +1645,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: MovingPlatFormBase
       objectReference: {fileID: 0}
+    - target: {fileID: 5224828250460242161, guid: 340bc1e1d075a4b408463130371202c4, type: 3}
+      propertyPath: m_Center.y
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 6136348636117288382, guid: 340bc1e1d075a4b408463130371202c4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 483
+      value: 481
       objectReference: {fileID: 0}
     - target: {fileID: 6136348636117288382, guid: 340bc1e1d075a4b408463130371202c4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2665,9 +2669,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   horizontalOffset: {x: -20, y: 0, z: 20}
   horizontalDuration: 3
+  horizontalEase: 1
   verticalHeight: 40
   verticalDuration: 1
   returnDuration: 1.5
+  verticalEase: 7
 --- !u!1001 &1312137609
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5289,11 +5295,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5510821987219039614, guid: 82ae52d4f936ce144a44c68263e37a29, type: 3}
       propertyPath: m_Size.y
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5510821987219039614, guid: 82ae52d4f936ce144a44c68263e37a29, type: 3}
       propertyPath: m_Center.y
-      value: 1.5
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 5895421267996631089, guid: 82ae52d4f936ce144a44c68263e37a29, type: 3}
       propertyPath: m_LocalPosition.x
