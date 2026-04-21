@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7963980260221320784}
   - component: {fileID: 3689471514179041939}
   - component: {fileID: 2321729123111886463}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: TriangularPrismObstacle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -301,7 +301,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5605496380636835004}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 18dc7f578a24d2e48bd81acc8fabe4f9, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0

@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 223151611808574045, guid: 340bc1e1d075a4b408463130371202c4, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c533df60b88740f49b1abb3c87d861dc, type: 2}
     - target: {fileID: 2593901523657766735, guid: 340bc1e1d075a4b408463130371202c4, type: 3}
       propertyPath: m_Name
       value: SpecialWideMovingPlatForm Variant
