@@ -29,7 +29,7 @@ public class newThirdPersonController : vThirdPersonController
     [Tooltip("无方向输入时，是否朝角色正前方冲刺")]
     public bool dashForwardWhenNoInput = false;
     [Tooltip("空中冲刺时是否禁用重力（避免冲刺时下落）")]
-    public bool disableGravityWhenDash = false;
+    public bool disableGravityWhenDash = true;
 
     [Tooltip("最大冲刺数")]
     public int MaxDashTimes = 0;
