@@ -7,6 +7,10 @@ public class SegmentBar : MonoBehaviour
 {
     public static SegmentBar Instance;
 
+
+    [Header("玩家引用（把玩家物体拖到这里）")]
+    public newThirdPersonController playerController;
+
     [Header("UI素材（非常重要，必须赋值！）")]
     public Sprite defaultSprite; // 解决无法渐变的核心：必须有一个白色图片素材
 
@@ -39,6 +43,11 @@ public class SegmentBar : MonoBehaviour
     private List<Image> _staminaImages = new List<Image>();
     private HorizontalLayoutGroup _layoutGroup;
 
+    //private void Start()
+    //{
+    //    maxStaminaSegments = dd.maxstamina
+    //}
+
     /// <summary>
     /// 单例模式
     /// </summary>
@@ -48,7 +57,9 @@ public class SegmentBar : MonoBehaviour
         {
             Instance = this;
             _layoutGroup = GetComponent<HorizontalLayoutGroup>();
+            maxStaminaSegments = playerController.maxstamina;
             _maxStamina = maxStaminaSegments;
+            Debug.Log(playerController.maxstamina);
             // 初始化生成耐力格子
             GenerateStaminaSegments();
         }

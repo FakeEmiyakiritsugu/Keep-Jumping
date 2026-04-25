@@ -12,7 +12,7 @@ public class newThirdPersonController : vThirdPersonController
     #region
     [Header("new Controller")]
     [Tooltip("最大耐力")]
-    public int maxstamina = 1;
+    public int maxstamina = 2;
     [Tooltip("max air jump times")]
     public int maxairjumptimes = 0;//最大空中跳跃次数
     //[Tooltip("是否允许在空中冲刺（适配你的二段跳）")]
@@ -169,6 +169,7 @@ public class newThirdPersonController : vThirdPersonController
             isDashing = false;
             yield break;
         }
+        SegmentBar.Instance.ConsumeStamina(1);
         //触发冲刺动画
         string dashAnimName = "DashForward"; // 默认设定一个基础动画名
 

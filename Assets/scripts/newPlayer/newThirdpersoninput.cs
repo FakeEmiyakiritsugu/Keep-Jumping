@@ -70,7 +70,7 @@ public class newThirdpersoninput : vThirdPersonInput
     protected bool DashConditions()
     {
         bool dashflag = false;
-        if(!dd.isDashing&&dd.GetCurrentDashTimes()<dd.GetMaxDashTimes()&&SegmentBar.Instance.ConsumeStamina(1))//有耐力，不在冲刺
+        if(!dd.isDashing&&dd.GetCurrentDashTimes()<dd.GetMaxDashTimes()&&SegmentBar.Instance.HasStamina())//有耐力，不在冲刺
         {
             dashflag = true;
         }
