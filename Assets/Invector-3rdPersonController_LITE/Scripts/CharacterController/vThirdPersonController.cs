@@ -8,11 +8,11 @@ namespace Invector.vCharacterController
         {
             if (!this.enabled) return;
 
-            if (inputSmooth == Vector3.zero)
-            {
-                transform.position = animator.rootPosition;
-                transform.rotation = animator.rootRotation;
-            }
+            //if (inputSmooth == Vector3.zero)
+            //{
+            //    transform.position = animator.rootPosition;
+            //    transform.rotation = animator.rootRotation;
+            //}
 
             if (useRootMotion)
                 MoveCharacter(moveDirection);

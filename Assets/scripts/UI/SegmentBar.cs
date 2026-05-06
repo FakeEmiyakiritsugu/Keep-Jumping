@@ -199,9 +199,17 @@ public class SegmentBar : MonoBehaviour
     }
 
     /// <summary>
-    /// 判断是否还有耐力
+    /// 判断是否还有足够耐力
     /// </summary>
-    public bool HasStamina() => _currentStamina > 0;
+    public bool HasStamina(float number)
+    {
+        bool answer=false;
+        if (_currentStamina >= number)
+        {
+            answer = true;
+        }
+        return answer;
+    }
 
     // 当你在Inspector改最大耐力时，自动刷新格子
     private void OnValidate()
