@@ -96,7 +96,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 2c849d8411d64374a97bbe0148c80af8, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -6726,6 +6726,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d9cb743b0a3cd534d914c3021e8c4020, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1873486139}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d9cb743b0a3cd534d914c3021e8c4020, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1873486140}
   m_SourcePrefab: {fileID: 100100000, guid: d9cb743b0a3cd534d914c3021e8c4020, type: 3}
 --- !u!4 &1620508152 stripped
 Transform:
@@ -7786,6 +7789,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.7384176, y: 2.6043887, z: 0.5739685}
   m_Center: {x: -0.0000024437904, y: 0.13747692, z: 0.000000014901161}
+--- !u!114 &1873486140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1873486135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddd7771b30b09f94cac1b87cd8f0e18b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  finishSceneName: GameOver
 --- !u!1001 &1881282131
 PrefabInstance:
   m_ObjectHideFlags: 0
