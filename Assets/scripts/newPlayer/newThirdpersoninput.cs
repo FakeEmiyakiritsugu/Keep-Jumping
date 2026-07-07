@@ -19,6 +19,24 @@ public class newThirdpersoninput : vThirdPersonInput
 
 
 
+    //private Vector3 lastPos;
+
+    //private void LateUpdate()
+    //{
+    //    if (dd != null)
+    //    {
+    //        if (Vector3.Distance(lastPos, dd.transform.position) > 0.01f)
+    //        {
+    //            Debug.Log(
+    //                "位置被修改："
+    //                + dd.transform.position
+    //                + " 时间：" + Time.time
+    //            );
+    //        }
+
+    //        lastPos = dd.transform.position;
+    //    }
+    //}
 
     //重写cc的初始化逻辑
     protected override void InitilizeController()
@@ -27,11 +45,56 @@ public class newThirdpersoninput : vThirdPersonInput
         cc = dd;
 
         if (dd != null)
+        {
             dd.Init();
+            //人物位置初始化
+            Vector3 PlayerPst = new Vector3(GameManager.GMInstance.GlobalPlayerData.xPlayerPosition, GameManager.GMInstance.GlobalPlayerData.yPlayerPosition, GameManager.GMInstance.GlobalPlayerData.zPlayerPosition);
 
+
+            // 然后开启协程设置位置
+            StartCoroutine(LoadPlayerPosition());
+            //dd._rigidbody.position = PlayerPst;
+            //dd._rigidbody.velocity = Vector3.zero; // 清空可能存在的出生速度
+            ////dd.transform.position = PlayerPst;
+            //// 告诉全场景的碰撞体：“我已经在这里了！”
+            //Physics.SyncTransforms();
+            Debug.Log($"人物位置读取为{dd._rigidbody.position}");
+
+            //给予最大冲刺次数
+            dd.MaxDashTimes = GameManager.GMInstance.GlobalPlayerData.MaxDashTimes;
+        }
 
     }
 
+    private IEnumerator LoadPlayerPosition()
+    {
+        yield return null;
+
+        //this.enabled = false;
+
+        Vector3 playerPos = new Vector3(
+            GameManager.GMInstance.GlobalPlayerData.xPlayerPosition,
+            GameManager.GMInstance.GlobalPlayerData.yPlayerPosition,
+            GameManager.GMInstance.GlobalPlayerData.zPlayerPosition);
+
+
+        dd._rigidbody.position = playerPos;
+
+
+        // 清空物理状态
+        dd._rigidbody.velocity = Vector3.zero;
+        dd._rigidbody.angularVelocity = Vector3.zero;
+
+
+        Physics.SyncTransforms();
+
+        yield return new WaitForFixedUpdate();
+
+        //恢复控制
+        //this.enabled = true;
+
+        Debug.Log("读档位置：" + dd._rigidbody.position);
+    }
 
     protected override void InputHandle()
     {

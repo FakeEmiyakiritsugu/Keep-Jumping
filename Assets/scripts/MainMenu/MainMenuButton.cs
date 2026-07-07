@@ -15,9 +15,27 @@ public class MainMenu : MonoBehaviour
     {
         // 重新加载你的 3D 核心游戏场景
         SceneManager.LoadScene(startSceneName);
+        //新建存档
+        GameManager.GMInstance.GlobalPlayerData = new SaveData();
     }
 
-    // 绑定到“返回主菜单”按钮
+    //继续游戏按钮
+    public void OnContinueButtonPressed()
+    {
+        // 重新加载你的 3D 核心游戏场景
+        SceneManager.LoadScene(startSceneName);
+        //加载存档
+        GameManager.GMInstance.GlobalPlayerData = SaveSystem.Load();
+    }
+
+    //临时设置按钮，测试用
+    public void OnSettingButtonPressed()
+    {
+        SaveData testdata;
+        testdata = SaveSystem.Load();
+        Debug.Log($"SDStatus = {testdata.SDStatus} test = {testdata.test} 数据读取成功");
+    }
+    // 绑定到“退出游戏”按钮
     public void OnExitButtonPressed()
     {
         Debug.Log("收到退出游戏请求！");

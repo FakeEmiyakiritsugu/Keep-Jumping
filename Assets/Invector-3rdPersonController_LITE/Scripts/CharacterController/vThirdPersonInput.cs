@@ -31,9 +31,25 @@ namespace Invector.vCharacterController
 
         protected virtual void FixedUpdate()
         {
+            //Vector3 beforeVel = cc._rigidbody.velocity;
             cc.UpdateMotor();               // updates the ThirdPersonMotor methods
+            //if (beforeVel != cc._rigidbody.velocity)
+            //{
+            //    Debug.Log($"UpdateMotor 修改了速度: {beforeVel} -> {cc._rigidbody.velocity}");
+            //}
+            //beforeVel = cc._rigidbody.velocity;
             cc.ControlLocomotionType();     // handle the controller locomotion type and movespeed
+            //if (beforeVel != cc._rigidbody.velocity)
+            //{
+            //    Debug.Log($"ControlLocomotionType 修改了速度: {beforeVel} -> {cc._rigidbody.velocity}");
+            //}
+
+            //beforeVel = cc._rigidbody.velocity;
             cc.ControlRotationType();       // handle the controller rotation type
+            //if (beforeVel != cc._rigidbody.velocity)
+            //{
+            //    Debug.Log($"ControlRotationType 修改了速度: {beforeVel} -> {cc._rigidbody.velocity}");
+            //}
         }
 
         protected virtual void Update()

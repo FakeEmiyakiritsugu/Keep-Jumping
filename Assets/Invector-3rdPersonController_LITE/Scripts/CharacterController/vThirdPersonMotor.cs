@@ -180,8 +180,8 @@ namespace Invector.vCharacterController
                 _direction.Normalize();
 
             Vector3 targetPosition = (useRootMotion ? animator.rootPosition : _rigidbody.position) + _direction * (stopMove ? 0 : moveSpeed) * Time.deltaTime;
-            Vector3 targetVelocity = (targetPosition - transform.position) / Time.deltaTime;
-
+            //Vector3 targetVelocity = (targetPosition - transform.position) / Time.deltaTime;
+            Vector3 targetVelocity = (targetPosition - _rigidbody.position) / Time.deltaTime;
             bool useVerticalVelocity = true;
             if (useVerticalVelocity) targetVelocity.y = _rigidbody.velocity.y;
             _rigidbody.velocity = targetVelocity;
