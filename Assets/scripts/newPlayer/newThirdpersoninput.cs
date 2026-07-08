@@ -62,6 +62,8 @@ public class newThirdpersoninput : vThirdPersonInput
 
             //给予最大冲刺次数
             dd.MaxDashTimes = GameManager.GMInstance.GlobalPlayerData.MaxDashTimes;
+            Cursor.lockState = CursorLockMode.Locked;//限制鼠标位置
+            Cursor.visible = false;//限制鼠标不可见
         }
 
     }
