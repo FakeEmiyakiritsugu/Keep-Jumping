@@ -17,7 +17,29 @@ public class newThirdpersoninput : vThirdPersonInput
     #endregion
 
 
+    // 静态指针，全游戏唯一的主角输入实例
+    public static newThirdpersoninput Instance;
 
+
+    private void Awake()
+    {
+        // 1. 必须把自己登记到静态变量里！否则 UI 脚本通过 Instance 找不到你
+        Instance = this;
+
+        // 2. 正确的初始化冲刺键：
+        // 先从 PlayerPrefs 读取保存的按键字符串，如果读不到（第一次进游戏），就用默认的 "LeftShift"
+        string savedDashStr = PlayerPrefs.GetString("DashKey", KeyCode.LeftShift.ToString());
+        // 再把读出来的 "LeftShift" 转换成真正的 KeyCode
+        this.dashinput = (KeyCode)System.Enum.Parse(typeof(KeyCode), savedDashStr);
+
+        // 3. 正确的初始化跳跃键：
+        // 先读取，读不到就默认 "Space"（空格）
+        string savedJumpStr = PlayerPrefs.GetString("JumpKey", KeyCode.Space.ToString());
+        // 转换成真正的 KeyCode
+        this.jumpInput = (KeyCode)System.Enum.Parse(typeof(KeyCode), savedJumpStr);
+
+        Debug.Log($"主角初始化成功！当前冲刺键：{this.dashinput}，当前跳跃键：{this.jumpInput}");
+    }
 
     //private Vector3 lastPos;
 

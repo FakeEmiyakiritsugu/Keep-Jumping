@@ -8,6 +8,11 @@ public class GameOverButton : MonoBehaviour
     [Header("跳转的场景设置")]
     private string MainMenuSceneName = SceneName.MainMenu;
 
+    private void Start()
+    {
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = true;
+    }
 
     // 绑定到“返回主菜单”按钮
     public void OnBMMButtonPressed()

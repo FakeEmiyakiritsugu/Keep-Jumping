@@ -10,6 +10,9 @@ public class MainMenu : MonoBehaviour
     [Tooltip("结束游戏")]
     private string exitSceneName = "GameOverScene";
 
+    public GameObject SettingPanel;
+    public GameObject CoursePanel;
+
     // 绑定到“开始”按钮
     public void OnStartButtonPressed()
     {
@@ -28,13 +31,31 @@ public class MainMenu : MonoBehaviour
         GameManager.GMInstance.GlobalPlayerData = SaveSystem.Load();
     }
 
+    //游戏说明按钮
+    public void OnCourseButtonPressed()
+    {
+        CoursePanel.SetActive(true);
+    }
+
+    //游戏说明返回
+    public void OnCourseBackPressed()
+    {
+        CoursePanel.SetActive(false);
+    }
+
+
     //临时设置按钮，测试用
+    //public void OnSettingButtonPressed()
+    //{
+    //    SaveData testdata;
+    //    testdata = SaveSystem.Load();
+    //    Debug.Log($"SDStatus = {testdata.SDStatus} test = {testdata.test} 数据读取成功");
+    //}
     public void OnSettingButtonPressed()
     {
-        SaveData testdata;
-        testdata = SaveSystem.Load();
-        Debug.Log($"SDStatus = {testdata.SDStatus} test = {testdata.test} 数据读取成功");
+        SettingPanel.SetActive(true);
     }
+
     // 绑定到“退出游戏”按钮
     public void OnExitButtonPressed()
     {

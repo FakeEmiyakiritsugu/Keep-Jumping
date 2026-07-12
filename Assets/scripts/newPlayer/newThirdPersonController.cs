@@ -35,8 +35,11 @@ public class newThirdPersonController : vThirdPersonController
     public int MaxDashTimes = 0;
 
 
+    [Tooltip("音效播放器")]
+    public AudioSource audiosource;
 
-
+    [Tooltip("落地音效")]
+    public AudioClip LandSoftSound;
 
 
     #endregion
@@ -97,7 +100,14 @@ public class newThirdPersonController : vThirdPersonController
 
         if (groundDistance <= groundMinDistance)
         {
+            if(isGrounded==false)//第一次改变落地状态触发音效
+            {
+                PlayLandingSound();//播放落地音效
+            }
+
             isGrounded = true;
+
+            
 
             //在空中与地表发生变化
             IsGroundedChanged();
@@ -234,6 +244,15 @@ public class newThirdPersonController : vThirdPersonController
         //Debug.Log("ControlAnimatorRootMotion");
         if (useRootMotion)
             MoveCharacter(moveDirection);
+    }
+    /// <summary>
+    /// 播放落地音效
+    /// </summary>
+    public void PlayLandingSound()
+    {
+        float volume = 3*Mathf.InverseLerp(0f, 10f, -verticalVelocity);
+        audiosource.PlayOneShot(LandSoftSound, volume);
+        Debug.Log($"播放落地音效,音量大小为{volume},落地速度为{-verticalVelocity}");
     }
 }
 

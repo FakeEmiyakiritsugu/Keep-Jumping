@@ -84,6 +84,10 @@ public class AudioManager : MonoBehaviour
 
     public void PlayGameMusic()
     {
+        if(AS.clip != Menuclip && AS.isPlaying)
+        {
+            return;
+        }
         currentMusic = 1;
         AS.clip = Gameclip1;
         AS.loop = false;
